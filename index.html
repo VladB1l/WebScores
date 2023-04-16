@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital@1&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/12b51f0875.js" crossorigin="anonymous"></script>
     <title>WebScores | Головна</title>
 
     <style>
@@ -30,8 +31,18 @@
                 <p>WebScores</p>
             </a>
         </div>
+
+        <div class="right_menu">
+            <button id="registration">
+                <img src="./Img/user.png" alt="user">
+            </button>
+            <button id="switchMode">
+                <img src="./Img/moon.png" alt="moon">
+                <!-- <i class="fa-solid fa-sun  fa-2xl"></i> -->
+            </button>
+        </div>
     </header>
-   
+
     <ul class="competition">
         <li><a href="./Eng.html"><img src="./Img/eng.png" alt="Epl_flag">АПЛ</a></li>
         <li><a href="./Ger.html"><img src="./Img/ger.png" alt="Bundesliga_flag">Бундесліга</a></li>
@@ -45,10 +56,9 @@
             на наш сайт <b>WebScores</b>! Тут ви знайдете останні новини зі світу футболу, результати
             матчів, статистику та багато іншого. Ми оновлюємо сторінку щодня, щоб ви могли бути в курсі всього, що
             відбувається в світі футболу. Ми пропонуємо широкий вибір матчів з різних країн і турнірів. Також на
-            сторінках кожної ліги можна передевлатися таблиці <a href="#strikers">бомбардирів</a> та команд
-        </p>
+            сторінках кожної ліги можна передевлатися таблиці <a href="#strikers">бомбардирів</a> та команд </p>
         <h3>Головні матчі цих вихідних </h3>
-        <table  border="3">
+        <table border="3">
             <colgroup>
                 <col span="3" style="width: 200px;">
             </colgroup>
@@ -143,19 +153,19 @@
         </table>
         <h3 id="strikers"> Топ бомбардири англійської прем'єр ліги :</h3>
         <ol>
-            <li style="float: left;">
+            <li>
                 <Font face="arial" size="4" color="gray">Е.Холанд (27 голів)</Font>
             </li>
-            <li style="float: left;">
+            <li>
                 <Font face="arial" size="4" color="gray">Х.Кейн (18 голів)</Font>
             </li>
-            <li style="clear: both;">
+            <li>
                 <Font face="arial" size="4" color="gray">А.Тоуні (14 голів)</Font>
             </li>
-            <li style="float: left;">
+            <li>
                 <Font face="arial" size="4" color="gray">А.Мітровіч (14 голів)</Font>
             </li>
-            <li style="float: left;">
+            <li>
                 <Font face="arial" size="4" color="gray">М.Рашфорд (11 голів)</Font>
             </li>
         </ol>
@@ -191,8 +201,34 @@
                 </tr>
             </tbody>
         </table>
-        <a id="top" href="#body">▲</a> 
-        <!-- class="hide"  -->
+        <a  id="top" class="hide" href="#body">▲</a>
+
+        <div id="popup" class="hide">
+            <div class="popup_body">
+                <form>
+                    <h2>Реєстраційна форма</h2>
+
+                    <label for="FName">Ім'я:</label><br>
+                    <input class="FName" type="text" name="FName" id="FName"><br><br>
+                    <label for="LName">Прізвище:</label><br>
+                    <input class="LName" type="text" name="LName" id="LName"><br><br>
+                    <label for="Password">Пароль:</label><br>
+                    <input class="PWord" type="password" name="Password" id="Password"><br><br><br>
+                    <div>
+                        <button type="button" id="submit">Submit</button>
+                        <button type="reset">Reset</button>
+                        <button type="button" id="close">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="script.js"></script>
+        <script>
+            // let age = prompt("How old are you?")
+            // if (age < 18) {
+                
+            // }
+        </script>
     </main>
 </body>
 
