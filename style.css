@@ -361,8 +361,9 @@ input {
 }
 
 .popup_body button:first-child {
-  background-color: rgba(255, 255, 255, 0.9);
-  color: rgba(0, 0, 0, 0.8);
+  background-color: white;
+  color: black;
+  
 }
 .popup_body button:hover {
   border-radius: 18px;
@@ -371,7 +372,6 @@ input {
 }
 
 .popup_body button:first-child:hover {
-  background-color: white;
   color: black;
 }
 

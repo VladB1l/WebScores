@@ -1,16 +1,16 @@
 let submit = document.getElementById("submit");
 let registration = document.getElementById("registration");
+let clos = document.getElementById("close");
+let switchMode = document.getElementById("switchMode")
 
-window.onscroll = function() {
+window.onscroll = function () {
     scrollFunction()
 }
-
 
 function scrollFunction() {
     let top = document.getElementById("top")
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
         top.classList.remove("hide");
-        
     } else {
         top.classList.add("hide");
     }
@@ -18,16 +18,11 @@ function scrollFunction() {
 
 
 registration.onclick = function () {
-    clos();
+    popup.classList.remove("hide")
 }
 
-let close = document.getElementById("close");
-close.onclick = function () {
-    clos()
-}
-
-function clos() {
-    popup.classList.toggle("hide")
+clos.onclick = function () {
+    popup.classList.add("hide")
 }
 
 submit.onclick = function () {
@@ -36,16 +31,11 @@ submit.onclick = function () {
     let PWord = document.querySelector(".PWord").value;
 
     confirmation = confirm(` Ваше ім'я: ${Name};  \n Ваше прізвище: ${Last_Name}; \n Ваш пароль: ${PWord}; `)
-    if (confirmation == false) {
-        clos();
-        clos();
-    }
     if (confirmation == true) {
         location.href = "index.html"
     }
 }
 
-let switchMode = document.getElementById("switchMode")
 switchMode.onclick = function () {
     let body = document.querySelector("body")
     body.style.backgroundColor = "#0f5c76"

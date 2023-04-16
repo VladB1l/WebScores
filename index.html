@@ -201,19 +201,18 @@
                 </tr>
             </tbody>
         </table>
-        <a  id="top" class="hide" href="#body">▲</a>
-
+        <a id="top" class="hide" href="#body">▲</a>
         <div id="popup" class="hide">
             <div class="popup_body">
                 <form>
                     <h2>Реєстраційна форма</h2>
 
                     <label for="FName">Ім'я:</label><br>
-                    <input class="FName" type="text" name="FName" id="FName"><br><br>
+                    <input class="FName" type="text"  id="FName"><br><br>
                     <label for="LName">Прізвище:</label><br>
-                    <input class="LName" type="text" name="LName" id="LName"><br><br>
+                    <input class="LName" type="text"  id="LName"><br><br>
                     <label for="Password">Пароль:</label><br>
-                    <input class="PWord" type="password" name="Password" id="Password"><br><br><br>
+                    <input class="PWord" type="password"  id="Password"><br><br><br>
                     <div>
                         <button type="button" id="submit">Submit</button>
                         <button type="reset">Reset</button>
@@ -224,10 +223,32 @@
         </div>
         <script src="script.js"></script>
         <script>
-            // let age = prompt("How old are you?")
-            // if (age < 18) {
-                
-            // }
+
+            let elements = document.querySelectorAll('h1');
+            let age;
+            for (let i of elements) {
+                i.style.cursor = 'pointer'
+                i.onclick = function () {
+                    FuncAge();
+
+                    function FuncAge() {
+                        age = prompt("Скільки вам років?")
+                        if (age == false || age == null) {
+                            alert("Щоб продовжити потрібно спочатку відповісти на запитання.")
+                            FuncAge();
+                            return;
+                        }
+                        let question = confirm(`Ви впевнені у своїй відповіді ("${age}")?`)
+                        if (question == true) {
+                            alert(`Вам ${age} років`)
+                            
+                        }
+                        else{
+                            FuncAge();
+                        }
+                    }
+                }
+            }
         </script>
     </main>
 </body>
