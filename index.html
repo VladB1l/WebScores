@@ -224,41 +224,49 @@
         <script>
             let elements = document.querySelectorAll('h1');
             let age;
-            let exercise = 0;
+            let exercise = 1;
 
             for (let element of elements) {
-                element.style.cursor = 'pointer'
+                element.style.cursor = 'pointer';
                 element.onclick = function () {
-                    while (exercise != 3) {
-                        exercise = prompt(
-                            "Оберіть завдання: \n1. Діалог з користувачем; \n2. Порівняння двох рядків; \n3. Вихід;"
-                        )
-
+                    while (exercise != 0) {
+                        exercise = Number(prompt(
+                            `Оберіть завдання: \n   1. Діалог з користувачем; \n   2. Порівняння двох рядків; \n   3. Використання innerHTML; \n   4. Використання outerHTML; \n   0. Вихід;`
+                        ))
                         switch (exercise) {
-                            case "1":
+                            case 1:
                                 FuncAge();
                                 break;
 
-                            case "2":
+                            case 2:
                                 FuncString();
                                 break;
 
-                            case "3":
+                            case 3:
+                                FuncInner();
+                                break;
+
+                            case 4:
+                                FuncOuter();
+                                break;
+
+                            case 0:
                                 alert("Вихід із меню завдань");
                                 break;
 
                             default:
-                                alert("Сталась помилка. Обирати можна, вписавши номер завдання, який є із перелічених, будь ласка оберіть ще раз.");
+                                alert(
+                                    "Сталась помилка. Обирати можна, вписавши номер завдання, який є із перелічених, будь ласка оберіть ще раз.");
                                 break;
                         }
                     }
-                    exercise = 0;
+                    exercise = 1
                 }
             }
 
             function FuncAge() {
-                age = prompt("Скільки вам років?")
-                if (age == false || age == null) {
+                age = Number(prompt("Скільки вам років?"))
+                if (age == 0) {
                     alert("Щоб продовжити потрібно спочатку відповісти на запитання.")
                     FuncAge();
                     return;
@@ -271,9 +279,8 @@
                     FuncAge();
                 }
             }
-
         </script>
-         <script src="script.js"></script>
+        <script src="script.js"></script>
     </main>
 </body>
 
