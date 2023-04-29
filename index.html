@@ -208,11 +208,11 @@
                     <h2>Реєстраційна форма</h2>
 
                     <label for="FName">Ім'я:</label><br>
-                    <input class="FName" type="text"  id="FName"><br><br>
+                    <input class="FName" type="text" id="FName"><br><br>
                     <label for="LName">Прізвище:</label><br>
-                    <input class="LName" type="text"  id="LName"><br><br>
+                    <input class="LName" type="text" id="LName"><br><br>
                     <label for="Password">Пароль:</label><br>
-                    <input class="PWord" type="password"  id="Password"><br><br><br>
+                    <input class="PWord" type="password" id="Password"><br><br><br>
                     <div>
                         <button type="button" id="submit">Submit</button>
                         <button type="reset">Reset</button>
@@ -221,35 +221,59 @@
                 </form>
             </div>
         </div>
-        <script src="script.js"></script>
         <script>
-
             let elements = document.querySelectorAll('h1');
             let age;
-            for (let i of elements) {
-                i.style.cursor = 'pointer'
-                i.onclick = function () {
-                    FuncAge();
+            let exercise = 0;
 
-                    function FuncAge() {
-                        age = prompt("Скільки вам років?")
-                        if (age == false || age == null) {
-                            alert("Щоб продовжити потрібно спочатку відповісти на запитання.")
-                            FuncAge();
-                            return;
-                        }
-                        let question = confirm(`Ви впевнені у своїй відповіді ("${age}")?`)
-                        if (question == true) {
-                            alert(`Вам ${age} років`)
-                            
-                        }
-                        else{
-                            FuncAge();
+            for (let element of elements) {
+                element.style.cursor = 'pointer'
+                element.onclick = function () {
+                    while (exercise != 3) {
+                        exercise = prompt(
+                            "Оберіть завдання: \n1. Діалог з користувачем; \n2. Порівняння двох рядків; \n3. Вихід;"
+                        )
+
+                        switch (exercise) {
+                            case "1":
+                                FuncAge();
+                                break;
+
+                            case "2":
+                                FuncString();
+                                break;
+
+                            case "3":
+                                alert("Вихід із меню завдань");
+                                break;
+
+                            default:
+                                alert("Сталась помилка. Обирати можна, вписавши номер завдання, який є із перелічених, будь ласка оберіть ще раз.");
+                                break;
                         }
                     }
+                    exercise = 0;
                 }
             }
+
+            function FuncAge() {
+                age = prompt("Скільки вам років?")
+                if (age == false || age == null) {
+                    alert("Щоб продовжити потрібно спочатку відповісти на запитання.")
+                    FuncAge();
+                    return;
+                }
+                let question = confirm(`Ви впевнені у своїй відповіді ("${age}")?`)
+                if (question == true) {
+                    alert(`Вам ${age} років`)
+
+                } else {
+                    FuncAge();
+                }
+            }
+
         </script>
+         <script src="script.js"></script>
     </main>
 </body>
 
