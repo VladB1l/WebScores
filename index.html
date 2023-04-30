@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital@1&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/12b51f0875.js" crossorigin="anonymous"></script>
     <title>WebScores | Головна</title>
 
     <style>
@@ -24,7 +23,6 @@
 </head>
 
 <body id="body">
-
     <header>
         <div class="logo">
             <a href="./index.html"> <img src="./Img/Ball_icons.png" alt="logo">
@@ -51,6 +49,7 @@
     </ul>
 
     <main>
+        <!-- Закоментований текст  -->
         <h1> WebScores </h1>
         <p style=" border-left: 3px solid #033445; padding-left: 20px; opacity: 0.9; text-indent:20px">Ласкаво просимо
             на наш сайт <b>WebScores</b>! Тут ви знайдете останні новини зі світу футболу, результати
@@ -201,8 +200,8 @@
                 </tr>
             </tbody>
         </table>
-        <a id="top" class="hide" href="#body">▲</a>
-        <div id="popup" class="hide">
+        <a id="scroll_top" href="#body" hidden>▲</a>
+        <div id="popup" hidden>
             <div class="popup_body">
                 <form>
                     <h2>Реєстраційна форма</h2>
@@ -221,67 +220,76 @@
                 </form>
             </div>
         </div>
-        <script>
-            let elements = document.querySelectorAll('h1');
-            let age;
-            let exercise = 1;
 
-            for (let element of elements) {
-                element.style.cursor = 'pointer';
-                element.onclick = function () {
-                    while (exercise != 0) {
-                        exercise = Number(prompt(
-                            `Оберіть завдання: \n   1. Діалог з користувачем; \n   2. Порівняння двох рядків; \n   3. Використання innerHTML; \n   4. Використання outerHTML; \n   0. Вихід;`
-                        ))
-                        switch (exercise) {
-                            case 1:
-                                FuncAge();
-                                break;
-
-                            case 2:
-                                FuncString();
-                                break;
-
-                            case 3:
-                                FuncInner();
-                                break;
-
-                            case 4:
-                                FuncOuter();
-                                break;
-
-                            case 0:
-                                alert("Вихід із меню завдань");
-                                break;
-
-                            default:
-                                alert(
-                                    "Сталась помилка. Обирати можна, вписавши номер завдання, який є із перелічених, будь ласка оберіть ще раз.");
-                                break;
-                        }
-                    }
-                    exercise = 1
-                }
-            }
-
-            function FuncAge() {
-                age = Number(prompt("Скільки вам років?"))
-                if (age == 0) {
-                    alert("Щоб продовжити потрібно спочатку відповісти на запитання.")
-                    FuncAge();
-                    return;
-                }
-                let question = confirm(`Ви впевнені у своїй відповіді ("${age}")?`)
-                if (question == true) {
-                    alert(`Вам ${age} років`)
-
-                } else {
-                    FuncAge();
-                }
-            }
-        </script>
-        <script src="script.js"></script>
     </main>
+    <script>
+        let elements = document.querySelectorAll('h1');
+        let age;
+        let exercise = 1;
+
+        for (let element of elements) {
+            element.style.cursor = 'pointer';
+            element.onclick = function () {
+                while (exercise != 0) {
+                    exercise = Number(prompt(
+                        `Оберіть завдання: \n   1. Діалог з користувачем; \n   2. Порівняння двох рядків; \n   3. Використання innerHTML; \n   4. Використання outerHTML; \n   5. Використання TextContent;\n   6. Використання NodeValue; \n   0. Вихід; \n`
+                    ))
+                    switch (exercise) {
+                        case 1:
+                            FuncAge();
+                            break;
+
+                        case 2:
+                            FuncString();
+                            break;
+
+                        case 3:
+                            FuncInner();
+                            break;
+
+                        case 4:
+                            FuncOuter();
+                            break;
+
+                        case 5:
+                            FuncTextContent();
+                            break;
+
+                        case 6:
+                            FuncNodeValue();
+                            break;
+                        case 0:
+                            alert("Вихід із меню завдань");
+                            break;
+
+                        default:
+                            alert(
+                                "Сталась помилка. Обирати можна, вписавши номер завдання, який є із перелічених, будь ласка оберіть ще раз."
+                            );
+                            break;
+                    }
+                }
+                exercise = 1
+            }
+        }
+
+        function FuncAge() {
+            age = Number(prompt("Скільки вам років?"))
+            if (age == 0) {
+                alert("Щоб продовжити потрібно спочатку відповісти на запитання.")
+                FuncAge();
+                return;
+            }
+
+            if (confirm(`Ви впевнені у своїй відповіді ("${age}")?`)) {
+                alert(`Вам ${age} років`)
+
+            } else {
+                FuncAge();
+            }
+        }
+    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
