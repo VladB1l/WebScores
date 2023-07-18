@@ -18,9 +18,21 @@
 <body id="body">
     <header>
         <div class="logo">
-            <a href="./index.html"> <img src="./Img/Ball_icons.png" alt="logo">
-                <p>WebScores</p>
-            </a>
+            <img src="./Img/Ball_icons.png" alt="logo">
+            <a href="./index.html">WebScores</a>
+        </div>
+
+        <div class="right_menu">
+            <button data-action="pressButton" id="press_btn">
+                <img src="./Img/click.png" alt="click">
+            </button>
+            <button data-action="registration" id="registration">
+                <img src="./Img/user.png" alt="user">
+            </button>
+            <button data-action="changeColor">
+                <img src="./Img/moon.png" alt="moon">
+                <!-- <i class="fa-solid fa-sun  fa-2xl"></i> -->
+            </button>
         </div>
     </header>
 
@@ -321,7 +333,38 @@
             <li> М.Арнаутовіч (8 голів)</li>
             <li> М.Дзакканьї (7 голів)</li>
         </ol>
-        <a  id="scroll_top" class="hide" href="#body">▲</a>
+        <span id="scroll_top" hidden>▲</span>
+        <div id="popup" hidden>
+            <div class="popup_body">
+                <form>
+                    <h2>Реєстраційна форма</h2>
+
+                    <label for="FName">Ім'я:</label><br>
+                    <input class="FName" type="text" id="FName"><br><br>
+                    <label for="LName">Прізвище:</label><br>
+                    <input class="LName" type="text" id="LName"><br><br>
+                    <label for="Password">Пароль:</label><br>
+                    <input class="PWord" type="password" id="Password"><br><br><br>
+                    <div>
+                        <button type="button" id="submit">Submit</button>
+                        <button type="reset">Reset</button>
+                        <button type="button" id="close">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="game" hidden>
+            <div class="popup_body">
+                <div class="game_body">
+                    <b onclick="game.hidden = true; ball.hidden = true;">X</b>
+                    <img src="./Img/gate.png" id="gate" class="droppable">
+                    <img src="./Img/Ball_icons.png" id="ball">
+                    <p hidden>ГООООООЛ !!!</p>
+                </div>
+            </div>
+        </div>
+        <table class="standings"></table>
+        <div class="standings_button"><img src="./Img/information-button.png" alt="information-button.png" hidden></div>
     </main>
     <script src="script.js"></script>
 </body>

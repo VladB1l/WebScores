@@ -18,9 +18,21 @@
 <body id="body">
     <header>
         <div class="logo">
-            <a href="./index.html"> <img src="./Img/Ball_icons.png" alt="logo">
-                <p>WebScores</p>
-            </a>
+            <img src="./Img/Ball_icons.png" alt="logo">
+            <a href="./index.html">WebScores</a>
+        </div>
+
+        <div class="right_menu">
+            <button data-action="pressButton" id="press_btn">
+                <img src="./Img/click.png" alt="click">
+            </button>
+            <button data-action="registration" id="registration">
+                <img src="./Img/user.png" alt="user">
+            </button>
+            <button data-action="changeColor">
+                <img src="./Img/moon.png" alt="moon">
+                <!-- <i class="fa-solid fa-sun  fa-2xl"></i> -->
+            </button>
         </div>
     </header>
 
@@ -50,7 +62,7 @@
         <p> Також, якщо вам цікава ця ліга та ви хочете дізнаватися актуальні новини, можна відвідати <a target="_blank"
                 href="https://www.laliga.com/en-GB">головну сторінку</a> Іспанської прем'єр ліги.</p>
         <h3>Матчі останього туру:</h3>
-        <table  border="3" cellspacing="5">
+        <table border="3" cellspacing="5">
             <thead>
                 <tr>
                     <th colspan="3">Субота, 4 Березня</th>
@@ -78,7 +90,7 @@
             </tr>
         </table>
 
-        <table  border="3" cellspacing="5">
+        <table border="3" cellspacing="5">
             <thead>
                 <tr>
                     <th colspan="3">Неділя, 5 Березня</th>
@@ -106,8 +118,7 @@
             </tr>
         </table>
         <h3>Моменти найкращого матчу останього туру: </h3>
-        <iframe  width="560" height="315"
-            src="https://www.youtube.com/embed/1pyBpg1FoIc"></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/1pyBpg1FoIc"></iframe>
 
         <h3>Турнірна таблиця: </h3>
         <table style="width: 60%; " border="3" cellpadding="5">
@@ -317,7 +328,38 @@
             <li> О.Сансет (8 голів)</li>
             <li> А.Грізманн (8 голів)</li>
         </ol>
-        <a  id="scroll_top" class="hide" href="#body">▲</a>
+        <span id="scroll_top" hidden>▲</span>
+        <div id="popup" hidden>
+            <div class="popup_body">
+                <form>
+                    <h2>Реєстраційна форма</h2>
+
+                    <label for="FName">Ім'я:</label><br>
+                    <input class="FName" type="text" id="FName"><br><br>
+                    <label for="LName">Прізвище:</label><br>
+                    <input class="LName" type="text" id="LName"><br><br>
+                    <label for="Password">Пароль:</label><br>
+                    <input class="PWord" type="password" id="Password"><br><br><br>
+                    <div>
+                        <button type="button" id="submit">Submit</button>
+                        <button type="reset">Reset</button>
+                        <button type="button" id="close">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="game" hidden>
+            <div class="popup_body">
+                <div class="game_body">
+                    <b onclick="game.hidden = true; ball.hidden = true;">X</b>
+                    <img src="./Img/gate.png" id="gate" class="droppable">
+                    <img src="./Img/Ball_icons.png" id="ball">
+                    <p hidden>ГООООООЛ !!!</p>
+                </div>
+            </div>
+        </div>
+        <table class="standings"></table>
+        <div class="standings_button"><img src="./Img/information-button.png" alt="information-button.png" hidden></div>
     </main>
     <script src="script.js"></script>
 </body>

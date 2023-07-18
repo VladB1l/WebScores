@@ -22,19 +22,21 @@
 
 </head>
 
-<body id="body">
+<body>
     <header>
         <div class="logo">
-            <a href="./index.html"> <img src="./Img/Ball_icons.png" alt="logo">
-                <p>WebScores</p>
-            </a>
+            <img src="./Img/Ball_icons.png" alt="logo">
+            <a href="./index.html">WebScores</a>
         </div>
 
         <div class="right_menu">
-            <button id="registration">
+            <button data-action="pressButton" id="press_btn">
+                <img src="./Img/click.png" alt="click">
+            </button>
+            <button data-action="registration" id="registration">
                 <img src="./Img/user.png" alt="user">
             </button>
-            <button id="switchMode">
+            <button data-action="changeColor" >
                 <img src="./Img/moon.png" alt="moon">
                 <!-- <i class="fa-solid fa-sun  fa-2xl"></i> -->
             </button>
@@ -172,6 +174,9 @@
         <p> Якщо вам цікава ця ліга та ви хочете дізнаватися актуальні новини, можна відвідати <a target="_blank"
                 href="https://www.premierleague.com/matchweek/7856/blog">головну сторінку</a> Англійської прем'єр ліги.
         </p>
+        <script>
+            document.write(`<b>Приклад document.write</b>`)
+        </script>
         <p>Також нижче наведено посилання на головні сторінки інших турнірів</p>
         <table border="3" cellpadding="10px" align="center">
             <thead ">
@@ -200,7 +205,7 @@
                 </tr>
             </tbody>
         </table>
-        <a id="scroll_top" href="#body" hidden>▲</a>
+        <span id="scroll_top" hidden>▲</span>
         <div id="popup" hidden>
             <div class="popup_body">
                 <form>
@@ -220,7 +225,18 @@
                 </form>
             </div>
         </div>
-
+        <div id="game" hidden>
+            <div class="popup_body">
+                <div class="game_body">
+                    <b onclick="game.hidden = true; ball.hidden = true;">X</b>
+                    <img src="./Img/gate.png" id="gate" class="droppable">
+                    <img src="./Img/Ball_icons.png" id="ball">
+                    <p hidden>ГООООООЛ !!!</p>
+                </div>
+            </div>
+        </div>
+        <table class="standings"></table>
+        <div class="standings_button"><img src="./Img/information-button.png" alt="information-button.png" hidden></div>
     </main>
     <script>
         let elements = document.querySelectorAll('h1');

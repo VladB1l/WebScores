@@ -19,9 +19,21 @@
 
     <header>
         <div class="logo">
-            <a href="./index.html"> <img src="./Img/Ball_icons.png" alt="logo">
-                <p>WebScores</p>
-            </a>
+            <img src="./Img/Ball_icons.png" alt="logo">
+            <a href="./index.html">WebScores</a>
+        </div>
+
+        <div class="right_menu">
+            <button data-action="pressButton" id="press_btn">
+                <img src="./Img/click.png" alt="click">
+            </button>
+            <button data-action="registration" id="registration">
+                <img src="./Img/user.png" alt="user">
+            </button>
+            <button data-action="changeColor">
+                <img src="./Img/moon.png" alt="moon">
+                <!-- <i class="fa-solid fa-sun  fa-2xl"></i> -->
+            </button>
         </div>
     </header>
 
@@ -51,20 +63,25 @@
                 href="https://www.premierleague.com/matchweek/7856/blog">головну сторінку</a>
             Англійської прем'єр ліги.
         </p>
-        <img  style="float: left;" src="./Img/EPL.png" alt="epl">
+        <img style="float: left;" src="./Img/EPL.png" alt="epl">
         <p>У 1980-тих роках англійський футбол був на спаді. Стадіони поступово розвалювалися, якість інфраструктури для
-        вболівальників була незадовільною, хуліганство процвітало, а англійським клубам заборонили брати участь у
-        європейських клубних турнірах після трагічних подій на стадіоні Ейзель у 1985 році.Перший дивізіон
-        Футбольної Ліги, — найвищий рівень англійського футболу з 1888-го року, був далеко позаду іноземних ліг, таких
-        як італійська Серія A та іспанська Ла-Ліга, у відвідуваності й доходах, і деякі з найкращих англійських гравців
-        подалися за кордон. 
-        Однак, на початку 1990-х років справи пішли дещо краще; збірна Англії виступила дуже
-        успішно на Кубку світу 1990, програвши лише у півфіналі у серії пенальті. У 1990-му році УЄФА, керівний орган
-        європейського футболу, скасувала заборону англійським клубам грати у євротурнірах, а у січні того ж року було
-        опубліковано звіт Тейлора щодо стандартів безпеки на стадіонах, яким запропоновано високовартісну модернізацію
-        стадіонів з перетворенням їх на повністю сидячі.</p> 
-        
-        
+            вболівальників була незадовільною, хуліганство процвітало, а англійським клубам заборонили брати участь у
+            європейських клубних турнірах після трагічних подій на стадіоні Ейзель у 1985 році.Перший дивізіон
+            Футбольної Ліги, — найвищий рівень англійського футболу з 1888-го року, був далеко позаду іноземних ліг,
+            таких
+            як італійська Серія A та іспанська Ла-Ліга, у відвідуваності й доходах, і деякі з найкращих англійських
+            гравців
+            подалися за кордон.
+            Однак, на початку 1990-х років справи пішли дещо краще; збірна Англії виступила дуже
+            успішно на Кубку світу 1990, програвши лише у півфіналі у серії пенальті. У 1990-му році УЄФА, керівний
+            орган
+            європейського футболу, скасувала заборону англійським клубам грати у євротурнірах, а у січні того ж року
+            було
+            опубліковано звіт Тейлора щодо стандартів безпеки на стадіонах, яким запропоновано високовартісну
+            модернізацію
+            стадіонів з перетворенням їх на повністю сидячі.</p>
+
+
         <h3>Матчі останього туру:</h3>
         <table border="3" cellspacing="5">
             <thead>
@@ -125,7 +142,8 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/4xW3llwXW4Y" allowfullscreen></iframe>
 
         <h3>Турнірна таблиця: </h3>
-        <table class="standings">
+        <table class="standings" >
+            <div class="standings_button"><img src="./Img/information-button.png" alt="information-button.png"></div>
             <!-- style="width: 60%;" border="3" cellpadding="5"> -->
 
             <!-- <colgroup>
@@ -149,7 +167,7 @@
                     <td>П</td>
                 </tr> -->
             </thead>
-            <tr>
+            <tr data-counter>
                 <td> <span class="Cl_mark">1</span></td>
                 <td class="td_flex"><img src="./Img/Eng_img/Arsenal.png" alt="Arsenal_img"> Арсенал</td>
                 <td>26</td>
@@ -158,16 +176,17 @@
                 <td>3</td>
                 <td>63</td>
             </tr>
-            <tr>
+            <tr data-counter>
                 <td> <span class="Cl_mark">2</span></td>
-                <td class="td_flex"><img src="./Img/Eng_img/Man_c.png" alt="Arsenal_img"> Манчестер Сіті</td>
+                <td class="td_flex"><img src="./Img/Eng_img/Man_c.png" alt="Arsenal_img" data-counter> Манчестер Сіті
+                </td>
                 <td>26</td>
                 <td>18</td>
                 <td>4</td>
                 <td>4</td>
                 <td>58</td>
             </tr>
-            <tr>
+            <tr data-counter>
                 <td> <span class="Cl_mark">3</span></td>
                 <td class="td_flex"><img src="./Img/Eng_img/Man_u.png" alt="Arsenal_img"> Манчестер Юнайтед</td>
                 <td>26</td>
@@ -176,7 +195,7 @@
                 <td>6</td>
                 <td>49</td>
             </tr>
-            <tr>
+            <tr data-counter>
                 <td> <span class="Cl_mark">4</span></td>
                 <td class="td_flex"><img src="./Img/Eng_img/TTH.png" alt="Arsenal_img"> Тоттенхем</td>
                 <td>25</td>
@@ -185,7 +204,7 @@
                 <td>9</td>
                 <td>45</td>
             </tr>
-            <tr>
+            <tr data-counter>
                 <td> <span class="El_mark">5</span></td>
                 <td class="td_flex"><img src="./Img/Eng_img/Liver.png" alt="Arsenal_img"> Ліверпуль</td>
                 <td>26</td>
@@ -194,7 +213,7 @@
                 <td>7</td>
                 <td>42</td>
             </tr>
-            <tr>
+            <tr data-counter>
                 <td> 6</td>
                 <td class="td_flex"><img src="./Img/Eng_img/Newcst.png" alt="Arsenal_img"> Ньюкасл Юнайтед</td>
                 <td>25</td>
@@ -203,7 +222,7 @@
                 <td>3</td>
                 <td>41</td>
             </tr>
-            <tr>
+            <tr data-counter>
                 <td>7</td>
                 <td class="td_flex"><img src="./Img/Eng_img/Fullhem.png" alt="Arsenal_img">Фулхем</td>
                 <td>24</td>
@@ -212,7 +231,7 @@
                 <td>9</td>
                 <td>39</td>
             </tr>
-            <tr>
+            <tr data-counter>
                 <td>8</td>
                 <td class="td_flex"><img src="./Img/Eng_img/Bright.png" alt="Arsenal_img"> Брайтон</td>
                 <td>25</td>
@@ -221,7 +240,7 @@
                 <td>7</td>
                 <td>38</td>
             </tr>
-            <tr>
+            <tr data-counter>
                 <td>9</td>
                 <td class="td_flex"><img src="./Img/Eng_img/Brentf.png" alt="Arsenal_img">Брентфорд</td>
                 <td>25</td>
@@ -230,7 +249,7 @@
                 <td>4</td>
                 <td>38</td>
             </tr>
-            <tr>
+            <tr data-counter>
                 <td>10</td>
                 <td class="td_flex"><img src="./Img/Eng_img/Chelsea.png" alt="Arsenal_img"> Челсі</td>
                 <td>25</td>
@@ -239,7 +258,7 @@
                 <td>9</td>
                 <td>34</td>
             </tr>
-            <tr>
+            <tr data-counter>
                 <td>11</td>
                 <td class="td_flex"><img src="./Img/Eng_img/Aston.png" alt="Arsenal_img">Астон Вілла</td>
                 <td>24</td>
@@ -248,7 +267,7 @@
                 <td>11</td>
                 <td>34</td>
             </tr>
-            <tr>
+            <tr data-counter>
                 <td>12</td>
                 <td class="td_flex"><img src="./Img/Eng_img/Crystal.png" alt="Arsenal_img">Крістал Пелес</td>
                 <td>25</td>
@@ -257,7 +276,7 @@
                 <td>10</td>
                 <td>27</td>
             </tr>
-            <tr>
+            <tr data-counter>
                 <td>13</td>
                 <td class="td_flex"><img src="./Img/Eng_img/Wolves.png" alt="Arsenal_img">Вулверхемптон</td>
                 <td>26</td>
@@ -266,7 +285,7 @@
                 <td>13</td>
                 <td>27</td>
             </tr>
-            <tr>
+            <tr data-counter>
                 <td>14</td>
                 <td class="td_flex"><img src="./Img/Eng_img/Forest.png" alt="Arsenal_img">Ноттінгем</td>
                 <td>25</td>
@@ -275,7 +294,7 @@
                 <td>15</td>
                 <td>26</td>
             </tr>
-            <tr>
+            <tr data-counter>
                 <td>15</td>
                 <td class="td_flex"><img src="./Img/Eng_img/Lester.png" alt="Arsenal_img"> Лестер</td>
                 <td>25</td>
@@ -284,7 +303,7 @@
                 <td>14</td>
                 <td>24</td>
             </tr>
-            <tr>
+            <tr data-counter>
                 <td>16</td>
                 <td class="td_flex"><img src="./Img/Eng_img/Westhm.png" alt="Arsenal_img">Вест Хем</td>
                 <td>26</td>
@@ -293,7 +312,7 @@
                 <td>13</td>
                 <td>23</td>
             </tr>
-            <tr>
+            <tr data-counter>
                 <td>17</td>
                 <td class="td_flex"><img src="./Img/Eng_img/Lids.png" alt="Arsenal_img">Лідс</td>
                 <td>25</td>
@@ -358,7 +377,44 @@
             <li> Р.Морено (9 голів)</li>
             <li> М.Альмірон (8 голів)</li>
         </ol>
-        <a  id="scroll_top" class="hide" href="#body">▲</a>
+        <span id="scroll_top" hidden>▲</span>
+        <div id="popup" hidden>
+            <div class="popup_body">
+                <form>
+                    <h2>Реєстраційна форма</h2>
+
+                    <label for="FName">Ім'я:</label><br>
+                    <input class="FName" type="text" id="FName"><br><br>
+                    <label for="LName">Прізвище:</label><br>
+                    <input class="LName" type="text" id="LName"><br><br>
+                    <label for="Password">Пароль:</label><br>
+                    <input class="PWord" type="password" id="Password"><br><br><br>
+                    <div>
+                        <button type="button" id="submit">Submit</button>
+                        <button type="reset">Reset</button>
+                        <button type="button" id="close">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="info" hidden>
+            <div class="popup_body">
+                <div style="width: 650px; position: relative;">
+                    <b onclick="info.hidden = true">X</b>
+                    <span id="info_text"></span>
+                </div>
+            </div>
+        </div>
+        <div id="game" hidden>
+            <div class="popup_body">
+                <div class="game_body">
+                    <b onclick="game.hidden = true; ball.hidden = true;">X</b>
+                    <img src="./Img/gate.png" id="gate" class="droppable">
+                    <img src="./Img/Ball_icons.png" id="ball">
+                    <p hidden>ГООООООЛ !!!</p>
+                </div>
+            </div>
+        </div>
     </main>
 
     <script src="script.js"></script>
